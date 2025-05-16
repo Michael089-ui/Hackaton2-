@@ -7,7 +7,7 @@ public class Agenda {
     private int maxContactos;
 
     //Array
-    private ArrayList<Contacto> contactos;
+    private final ArrayList<Contacto> contactos;
 
     // Constructores
     public Agenda() {

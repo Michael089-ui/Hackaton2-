@@ -37,12 +37,13 @@ public class Main {
             switch (opcionMenu) {
                 case 1:
                     System.out.print("Nombre: ");
-                    String nombre = scanner.nextLine();
+                    String nombreEnt = scanner.nextLine();
                     System.out.print("Apellido: ");
-                    String apellido = scanner.nextLine();
+                    String apellidoEnt = scanner.nextLine();
                     System.out.print("Teléfono: ");
-                    int telefono = Integer.parseInt(scanner.nextLine());
-                    Contacto nuevo = new Contacto(nombre, apellido, telefono);
+                    String telefonoEnt = scanner.next();
+                    // Cree el objeto de acuerdo a los valores Sint en el metodo constructor
+                    Contacto nuevo = new Contacto(nombreEnt, apellidoEnt, telefonoEnt);
 //                    agenda.agregarContacto(nuevo);
                     break;
 

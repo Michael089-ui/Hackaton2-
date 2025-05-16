@@ -3,12 +3,12 @@ package com.agendaTelefonica;
 public class Contacto {
     private String nombre;
     private String apellido;
-    private int telefono;
+    private String telefono;
 
-    public Contacto(String nombre, String apellido, String telefono) { // Método constructor vacio
+    public Contacto() {
     }
 
-    public Contacto(String nombre, String apellido, int telefono) { // Método constructor con validaciones
+    public Contacto(String nombre, String apellido, String telefono) {
         if (nombre == null || nombre.trim().isEmpty() || apellido == null || apellido.trim().isEmpty()){
             System.out.println("Nombres y apellidos no pueden quedar vacíos"); // Oocional poner un thorow new Illegal
         }
@@ -33,11 +33,11 @@ public class Contacto {
         this.apellido = apellido;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 }
