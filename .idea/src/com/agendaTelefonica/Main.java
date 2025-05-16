@@ -11,11 +11,11 @@ public class Main {
 
         if (opcion.equalsIgnoreCase("S")) {
             System.out.print("Ingrese tamaño máximo: ");
-            int tamano = scanner.nextInt();
+            int tam = scanner.nextInt();
             scanner.nextLine();
-            agenda = new Agenda(tamano);
+            agenda = new Agenda(tam);
         } else {
-            agenda = new Agenda(); // tamaño por defecto 10
+            agenda = new Agenda();
         }
 
         boolean salir = false;
@@ -41,9 +41,9 @@ public class Main {
                     System.out.print("Apellido: ");
                     String apellido = scanner.nextLine();
                     System.out.print("Teléfono: ");
-                    String telefono = scanner.nextLine();
+                    int telefono = Integer.parseInt(scanner.nextLine());
                     Contacto nuevo = new Contacto(nombre, apellido, telefono);
-                    agenda.añadirContacto(nuevo);
+//                    agenda.agregarContacto(nuevo);
                     break;
 
                 case 2:
@@ -52,33 +52,34 @@ public class Main {
 
                 case 3:
                     System.out.print("Nombre a buscar: ");
-                    String nombreBusqueda = scanner.nextLine();
+                    String nombreBusq = scanner.nextLine();
                     System.out.print("Apellido a buscar: ");
-                    String apellidoBusqueda = scanner.nextLine();
-                    agenda.buscaContacto(nombreBusqueda, apellidoBusqueda);
+                    String apellidoBusq = scanner.nextLine();
+                    agenda.buscarContacto(nombreBusq, apellidoBusq);
                     break;
 
                 case 4:
                     System.out.print("Nombre del contacto a eliminar: ");
-                    String nombreEliminar = scanner.nextLine();
+                    String nombreElim = scanner.nextLine();
                     System.out.print("Apellido del contacto a eliminar: ");
-                    String apellidoEliminar = scanner.nextLine();
-                    Contacto eliminar = new Contacto(nombreEliminar, apellidoEliminar, "");
-                    agenda.eliminarContacto(eliminar);
+                    String apellidoElim = scanner.nextLine();
+//                    Contacto eliminar = new Contacto(nombreElim, apellidoElim, "");
+//                    agenda.eliminarContacto(eliminar);
                     break;
 
                 case 5:
                     System.out.print("Nombre del contacto a modificar: ");
-                    String nombreModificar = scanner.nextLine();
+                    String nombreMod = scanner.nextLine();
                     System.out.print("Apellido del contacto a modificar: ");
-                    String apellidoModificar = scanner.nextLine();
+                    String apellidoMod = scanner.nextLine();
                     System.out.print("Nuevo teléfono: ");
-                    String nuevoTel = scanner.nextLine();
-                    agenda.modificarTelefono(nombreModificar, apellidoModificar, nuevoTel);
+                    int nuevoTel = scanner.nextInt();
+                    scanner.nextLine();
+                    agenda.modificarTelefono(nombreMod, apellidoMod, nuevoTel);
                     break;
 
                 case 6:
-                    System.out.println("Espacios libres: " + agenda.espaciosLibres());
+                    agenda.espaciosLibres();
                     if (agenda.agendaLlena()) {
                         System.out.println("La agenda está llena.");
                     }
@@ -95,7 +96,6 @@ public class Main {
         }
 
         scanner.close();
-
 
     }
 }
